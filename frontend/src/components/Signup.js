@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import '../css/styles.css';
 
 export default function Signup() {
@@ -9,7 +9,7 @@ export default function Signup() {
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const signupData = { username, email, password, address, phone };
@@ -24,6 +24,13 @@ export default function Signup() {
       });
 
       const data = await response.json();
+      if (response.status === 200) {
+        console.log('Signin successful, navigating to home');
+        navigate("/");
+      } else {
+        setMessage(data.message || 'Login failed');
+        navigate("/login");
+      }
       setMessage(data.message);
       console.log('Signup data submitted successfully:', data);
     } catch (err) {

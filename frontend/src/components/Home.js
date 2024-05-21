@@ -1,16 +1,15 @@
 import React from 'react'
 import '../css/home.css'
 import { Link } from 'react-router-dom'
-export default function Home() {
+export default function Home(isLoggedIn) {
   return (
     <div>
     <main>
         <section className="hero">
             <h1>Welcome to WasteWise</h1>
             <p>Revolutionizing Waste Management for Cleaner Communities</p>
-            <Link to="/signup" className="btn">Get Started</Link>
+            {!isLoggedIn&&<Link to="/signup" className="btn">Get Started</Link>}
         </section>
-        
         <section id="features" className="features">
             <h2>Features</h2>
             <div className="feature-item">
@@ -36,7 +35,6 @@ export default function Home() {
             <p>Efficient waste management is essential for maintaining clean and sustainable urban and rural environments. WasteWise addresses the challenges of traditional waste management systems by providing a transparent and user-friendly platform for scheduling waste collection, tracking progress, and reporting issues.</p>
         </section>
     </main>
-
     </div>
   )
 }

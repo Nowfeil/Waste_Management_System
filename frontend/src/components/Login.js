@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/styles.css';
 
-export default function Login() {
+export default function Login({ setIsLoggedIn }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -26,9 +26,10 @@ export default function Login() {
       console.log('Response status:', response.status);
       console.log('Response data:', data);
 
-      if (response.status===200) {
+      if (response.status === 200) {
         console.log('Login successful, navigating to home');
-        navigate('/');
+        setIsLoggedIn(true);
+        navigate("/");
       } else {
         setMessage(data.message || 'Login failed');
       }

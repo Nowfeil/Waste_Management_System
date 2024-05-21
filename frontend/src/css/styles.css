@@ -128,12 +128,11 @@ main {
 
 /* Footer Styles */
 footer {
-    background-color: #4CAF50;
     color: white;
     text-align: center;
     padding: 1rem 0;
-    position: relative;
-    bottom: 0;
     width: 100%;
     box-shadow: 0 -4px 2px -2px gray;
+    position: relative;
+    bottom: 0;
 }
