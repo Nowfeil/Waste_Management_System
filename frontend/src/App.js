@@ -11,22 +11,22 @@ import Profile from './components/Profile';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  
+  const [userData,setUserData] = useState('')
   return (
     <>
       <Router>
         <Routes>
           <Route path="/login" element={
             <>
-              <Navbar isLoggedIn={isLoggedIn} />
-              <Login setIsLoggedIn={setIsLoggedIn} />
+              <Navbar isLoggedIn={isLoggedIn} userData={userData} />
+              <Login setIsLoggedIn={setIsLoggedIn} setUserData = {setUserData}/>
               <Footer />
             </>
           } />
           <Route path="/" element={
             <>
-              <Navbar isLoggedIn={isLoggedIn} />
-              <Home isLoggedIn={isLoggedIn} />
+              <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
+              <Home isLoggedIn={isLoggedIn} setUserData = {setUserData}/>
               <Footer />
             </>
           } />
@@ -42,8 +42,8 @@ function App() {
           } />
           <Route path="/profile" element={
             <>
-              <Navbar isLoggedIn={isLoggedIn} />
-              <Profile setIsLoggedIn={setIsLoggedIn} />
+              <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
+              <Profile setIsLoggedIn={setIsLoggedIn} userData={userData}/>
               <Footer />
             </>
           }/>

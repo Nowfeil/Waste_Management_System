@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Navbar({ isLoggedIn }) {
+export default function Navbar({ isLoggedIn ,userData}) {
+  const [greet,setGreeting] = useState(false)
+  useEffect(()=>{
+    if(isLoggedIn){
+      setGreeting(true)
+      const time = setTimeout(()=>{
+        setGreeting(false);
+      },2000)
+      return ()=>clearTimeout(time)
+    }
+  },[isLoggedIn])
   return (
     <div style={{ backgroundColor: 'green' }}>
       <nav className="navbar navbar-expand-lg">
@@ -25,6 +35,10 @@ export default function Navbar({ isLoggedIn }) {
               )}
             </div>
           </div>
+          {isLoggedIn && greet &&<div className='navbar-text ms-auto' style={{ fontSize: '1rem' }}>
+            {<h3>Welcome {userData.username}</h3>}
+          </div>
+          }
         </div>
       </nav>
     </div>
