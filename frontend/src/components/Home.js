@@ -5,7 +5,7 @@ import waste_disposal from '../images/waste_disposal.jpg'
 import waste_treatement from '../images/waste_treatement.jpg'
 import waste_recycling from '../images/waste_recycling.jpeg'
 import waste_transport from '../images/waste_transport.jpg'
-export default function Home(isLoggedIn) {
+export default function Home({isLoggedIn}) {
   return (
     <div>
     <main>
@@ -14,7 +14,7 @@ export default function Home(isLoggedIn) {
             <p>Revolutionizing Waste Management for Cleaner Communities</p>
             {!isLoggedIn&&<Link to="/signup" className="btn">Get Started</Link>}
         </section>
-        <section id="features" className="features">
+        <section id="services" className="features">
             <h2>Features</h2>
             <div className="feature-item">
                 <h3>User Authentication</h3>
@@ -64,7 +64,10 @@ export default function Home(isLoggedIn) {
                     </div>
                 </div>
             </div>
-            <Link to={isLoggedIn ? "/schedulewaste" : "/login"}><button className='btn btn-primary my-3'>Schedule</button></Link>
+            {
+                isLoggedIn?<Link to="/schedulewaste"><button className='btn btn-primary my-3'>Schedule</button></Link>:<Link to="/login"><button className='btn btn-primary my-3'>Schedule</button></Link>
+            }
+            
         </section>
         <section id="about" className="about">
             <h2>About WasteWise</h2>
