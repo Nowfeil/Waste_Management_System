@@ -1,6 +1,10 @@
 import React from 'react'
 import '../css/home.css'
 import { Link } from 'react-router-dom'
+import waste_disposal from '../images/waste_disposal.jpg'
+import waste_treatement from '../images/waste_treatement.jpg'
+import waste_recycling from '../images/waste_recycling.jpeg'
+import waste_transport from '../images/waste_transport.jpg'
 export default function Home(isLoggedIn) {
   return (
     <div>
@@ -29,7 +33,39 @@ export default function Home(isLoggedIn) {
                 <p>Report any issues related to waste management effortlessly.</p>
             </div>
         </section>
-        
+        <section id="features" className="features">
+            <div className='container d-flex' style={{gap:"10px"}}>
+                <div className="card" style={{width: "18rem;"}}>
+                    <img src={waste_disposal} className="card-img-top" alt="..." width={"250px"} height={"200px"}/>
+                    <div className="card-body">
+                        <h5 className="card-title">Waste Disposal</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div className="card" style={{width: "18rem;"}}>
+                    <img src={waste_treatement} className="card-img-top" alt="..." width={"250px"} height={"200px"}/>
+                    <div className="card-body">
+                        <h5 className="card-title">Waste Treatement</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div className="card" style={{width: "18rem;"}}>
+                    <img src={waste_recycling} className="card-img-top" alt="..." width={"250px"} height={"200px"}/>
+                    <div className="card-body">
+                        <h5 className="card-title">Waste Recycling</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div className="card" style={{width: "18rem;"}}>
+                    <img src={waste_transport} className="card-img-top" alt="..." width={"250px"} height={"200px"}/>
+                    <div className="card-body">
+                        <h5 className="card-title">Waste Collection and Transportation</h5>
+                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <Link to={isLoggedIn ? "/schedulewaste" : "/login"}><button className='btn btn-primary my-3'>Schedule</button></Link>
+        </section>
         <section id="about" className="about">
             <h2>About WasteWise</h2>
             <p>Efficient waste management is essential for maintaining clean and sustainable urban and rural environments. WasteWise addresses the challenges of traditional waste management systems by providing a transparent and user-friendly platform for scheduling waste collection, tracking progress, and reporting issues.</p>

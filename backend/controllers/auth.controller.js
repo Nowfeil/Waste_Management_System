@@ -22,7 +22,7 @@ async function signup(req, res) {
         }
         else{
           const newUser = await loginModel.create({ username, email, password, address, phone });
-          return res.status(200).json({message:"user created succesfully"})
+          return res.status(200).json(newUser)
         }
     } catch (err) {
         return res.status(500).json({ message: "Error occurred while signing in", error: err });

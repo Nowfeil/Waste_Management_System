@@ -8,6 +8,7 @@ import Logout from './components/Logout';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import Profile from './components/Profile';
+import ScheduleWaste from './components/ScheduleWaste';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,7 +34,7 @@ function App() {
           <Route path="/signup" element={
             <>
               <Navbar isLoggedIn={isLoggedIn} />
-              <Signup setIsLoggedIn={setIsLoggedIn} />
+              <Signup setIsLoggedIn={setIsLoggedIn} setUserData = {setUserData}/>
               <Footer />
             </>
           } />
@@ -44,6 +45,13 @@ function App() {
             <>
               <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
               <Profile setIsLoggedIn={setIsLoggedIn} userData={userData}/>
+              <Footer />
+            </>
+          }/>
+          <Route path="/schedulewaste" element={
+            <>
+              <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
+              <ScheduleWaste isLoggedIn={isLoggedIn}/>
               <Footer />
             </>
           }/>

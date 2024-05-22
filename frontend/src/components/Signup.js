@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 import '../css/styles.css';
 
-export default function Signup() {
+export default function Signup({setIsLoggedIn,setUserData}) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -26,6 +26,8 @@ export default function Signup() {
       const data = await response.json();
       if (response.status === 200) {
         console.log('Signin successful, navigating to home');
+        setUserData(data)
+        setIsLoggedIn(true)
         navigate("/");
       } else {
         setMessage(data.message || 'Login failed');
