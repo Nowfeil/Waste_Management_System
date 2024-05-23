@@ -27,7 +27,7 @@ function App() {
           <Route path="/" element={
             <>
               <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
-              <Home isLoggedIn={isLoggedIn} setUserData = {setUserData}/>
+              <Home isLoggedIn={isLoggedIn} setUserData = {setUserData} userData={userData}/>
               <Footer />
             </>
           } />

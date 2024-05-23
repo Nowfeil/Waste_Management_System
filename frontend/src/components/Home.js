@@ -5,7 +5,13 @@ import waste_disposal from '../images/waste_disposal.jpg'
 import waste_treatement from '../images/waste_treatement.jpg'
 import waste_recycling from '../images/waste_recycling.jpeg'
 import waste_transport from '../images/waste_transport.jpg'
-export default function Home({isLoggedIn}) {
+import e_waste from '../images/e_waste.jpeg'
+import food_waste from '../images/food_waste.jpeg'
+import glass_waste from '../images/glass_waste.jpeg'
+import medical_waste from '../images/medical_waste.jpeg'
+import metallic_waste from '../images/metallic_waste.jpg'
+import plastic_waste from '../images/plastic_waste.jpg'
+export default function Home({isLoggedIn,userData}) {
   return (
     <div>
     <main>
@@ -14,7 +20,7 @@ export default function Home({isLoggedIn}) {
             <p>Revolutionizing Waste Management for Cleaner Communities</p>
             {!isLoggedIn&&<Link to="/signup" className="btn">Get Started</Link>}
         </section>
-        <section id="services" className="features">
+        <section id="features" className="features">
             <h2>Features</h2>
             <div className="feature-item">
                 <h3>User Authentication</h3>
@@ -33,7 +39,8 @@ export default function Home({isLoggedIn}) {
                 <p>Report any issues related to waste management effortlessly.</p>
             </div>
         </section>
-        <section id="features" className="features">
+        <section id="services" className="services">
+            <h3 className='fw-medium'>Services</h3>
             <div className='container d-flex' style={{gap:"10px"}}>
                 <div className="card" style={{width: "18rem;"}}>
                     <img src={waste_disposal} className="card-img-top" alt="..." width={"250px"} height={"200px"}/>
@@ -69,6 +76,38 @@ export default function Home({isLoggedIn}) {
             }
             
         </section>
+
+
+        <section id="treatement" className="treatement">
+                <h2>We Treat</h2>
+            <div className='container d-flex' style={{gap:"10px"}}>
+                <figure class="figure">
+                    <img src={e_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption class="figure-caption">E Waste</figcaption>
+                </figure><figure class="figure">
+                    <img src={food_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption class="figure-caption">Food Waste</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src={glass_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption class="figure-caption">Glass Waste</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src={medical_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption class="figure-caption">Medical Waste</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src={metallic_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption class="figure-caption">Medical Waste</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src={plastic_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption class="figure-caption">Plastic Waste</figcaption>
+                </figure>
+            </div>
+        </section>
+
+
         <section id="about" className="about">
             <h2>About WasteWise</h2>
             <p>Efficient waste management is essential for maintaining clean and sustainable urban and rural environments. WasteWise addresses the challenges of traditional waste management systems by providing a transparent and user-friendly platform for scheduling waste collection, tracking progress, and reporting issues.</p>

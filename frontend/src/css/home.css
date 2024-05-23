@@ -75,8 +75,8 @@ nav {
     background-color: #E64A19;
 }
 
-/* Features Section Styles */
-.features {
+/* Features,Services,Treatement Section Styles */
+.features,.services,.treatement {
     padding: 2rem;
     background-color: white;
     max-width: 1200px;
@@ -84,7 +84,7 @@ nav {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.features h2 {
+.features h2,.services h2 {
     text-align: center;
     margin-bottom: 2rem;
 }

@@ -13,6 +13,7 @@ export default function Navbar({ isLoggedIn ,userData}) {
     }
   },[isLoggedIn])
   return (
+<>    
     <div style={{ backgroundColor: 'green' }}>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
@@ -42,5 +43,10 @@ export default function Navbar({ isLoggedIn ,userData}) {
         </div>
       </nav>
     </div>
+
+</>
   );
 }
+
+
+
