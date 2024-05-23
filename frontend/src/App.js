@@ -9,10 +9,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import Profile from './components/Profile';
 import ScheduleWaste from './components/ScheduleWaste';
-
+import Dashboard from './components/Dashboard';
+import DisplayWaste from './components/DisplayWaste'
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData,setUserData] = useState('')
+  const [scheduled,setSchedule] = useState(0);
   return (
     <>
       <Router>
@@ -51,7 +53,21 @@ function App() {
           <Route path="/schedulewaste" element={
             <>
               <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
-              <ScheduleWaste isLoggedIn={isLoggedIn}/>
+              <ScheduleWaste isLoggedIn={isLoggedIn} userData={userData} scheduled={scheduled} setSchedule={setSchedule}/>
+              <Footer />
+            </>
+          }/>
+          <Route path="/dashboard" element={
+            <>
+              <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
+              <Dashboard isLoggedIn={isLoggedIn} scheduled={scheduled}/>
+              <Footer />
+            </>
+          }/>
+          <Route path="/getWaste" element={
+            <>
+              <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
+              <DisplayWaste isLoggedIn={isLoggedIn}/>
               <Footer />
             </>
           }/>

@@ -29,7 +29,7 @@ export default function Login({ setIsLoggedIn ,setUserData}) {
         console.log('Login successful, navigating to home');
         setUserData(data);
         setIsLoggedIn(true);
-        navigate("/");
+        navigate("/dashboard");
       } else {
         setMessage(data.message || 'Login failed');
       }

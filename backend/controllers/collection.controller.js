@@ -1,7 +1,12 @@
 const CollectionModel=require('../model/collection.model')
 async function scheduleWaste(req,res){
-    const {userId, collectionDate, status, notes}=req.body
-    const newCollection = await CollectionModel.create({userId, collectionDate, status, notes})
+    console.log(req.body);
+    const dateInMillisecs = new Date().getTime();
+    const collectionId = Math.round(dateInMillisecs / 1000);
+    const username = req.body.username;
+    console.log(username);
+    const {collectionDate, address, notes}=req.body
+    const newCollection = await CollectionModel.create({username,collectionId,collectionDate, address, notes})
     console.log(newCollection);
     res.status(200).json({message:"collection added successfully"});
 }

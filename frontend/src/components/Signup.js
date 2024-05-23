@@ -28,7 +28,7 @@ export default function Signup({setIsLoggedIn,setUserData}) {
         console.log('Signin successful, navigating to home');
         setUserData(data)
         setIsLoggedIn(true)
-        navigate("/");
+        navigate("/dashboard");
       } else {
         setMessage(data.message || 'Login failed');
         navigate("/login");

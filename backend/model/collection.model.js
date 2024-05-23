@@ -2,9 +2,10 @@ const { model } = require('mongoose')
 const mongoose = require('../mongo_connect/mongo.connect')
 
 const CollectionSchema = mongoose.Schema({
-    userId: String,
+    username:String,
+    collectionId:String,
     collectionDate: String,
-    status: String,
+    address: String,
     notes: String,
 })
 

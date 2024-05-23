@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar({ isLoggedIn ,userData}) {
+  const navigate = useNavigate();
   const [greet,setGreeting] = useState(false)
   useEffect(()=>{
     if(isLoggedIn){
@@ -18,6 +19,13 @@ export default function Navbar({ isLoggedIn ,userData}) {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">Waste Management</Link>
+          {isLoggedIn ? (
+                <>
+                  <Link className="nav-link active" aria-current="page" to="/dashboard">Dashboard</Link>
+                </>
+              ) : null
+          }
+
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
