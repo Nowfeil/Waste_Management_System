@@ -98,7 +98,7 @@ export default function Home({isLoggedIn,userData}) {
                 </figure>
                 <figure class="figure">
                     <img src={metallic_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
-                    <figcaption class="figure-caption">Medical Waste</figcaption>
+                    <figcaption class="figure-caption">Metallic Waste</figcaption>
                 </figure>
                 <figure class="figure">
                     <img src={plastic_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>

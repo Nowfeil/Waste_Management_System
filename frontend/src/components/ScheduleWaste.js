@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router'; 
 import '../css/waste.css';
 
-const ScheduleWaste = ({userData,isLoggedIn,setSchedule,scheduled}) => {
+const ScheduleWaste = ({userData,isLoggedIn,setSchedule,scheduled,isDelete,setIsDelete}) => {
   const [submit, isSubmit] = useState(false);
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const ScheduleWaste = ({userData,isLoggedIn,setSchedule,scheduled}) => {
     notes: ''
   });
   console.log(userData);
-  formData.username = userData.username;
+  formData.uid = userData.uid;
   console.log(formData);
   const handleChange = (e) => {
     setFormData({

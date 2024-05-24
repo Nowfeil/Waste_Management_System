@@ -1,10 +1,10 @@
 const mongoose = require('../mongo_connect/mongo.connect')
 
 const IssueSchema = mongoose.Schema({
-    userId:String,
-    collectionDate:String,
-    status:String,
-    notes:String
+    uid:String,
+    issueType:String,
+    issueDescription:String,
+    status:String
 })
 
 const issueModel = mongoose.model("Issues",IssueSchema)

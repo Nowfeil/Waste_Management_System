@@ -15,13 +15,14 @@ async function login(req, res) {
 
 async function signup(req, res) {
     const {  username, email, password, address, phone } = req.body;
+    const data = await loginModel.find({});
     try {
         const user = await loginModel.findOne({ email });
         if(user && user.password==password){
           return res.status(200).json({ message: `User with ${email} already has an account. Please sign in.` });
         }
         else{
-          const newUser = await loginModel.create({ username, email, password, address, phone });
+          const newUser = await loginModel.create({ uid:data.length+1,username, email, password, address, phone });
           return res.status(200).json(newUser)
         }
     } catch (err) {
