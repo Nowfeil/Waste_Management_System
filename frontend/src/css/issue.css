@@ -1,0 +1,15 @@
+input{
+    border: none;
+    all: none;
+}
+
+input:active{
+    border: none;
+    all: none;
+}
+
+.cardBody{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

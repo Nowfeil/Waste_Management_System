@@ -1,11 +1,12 @@
 const loginModel = require('../model/login.model');
 
 async function getData(req, res) {
-    const { username, ...updateData } = req.body;
+    const { uid, username, ...updateData } = req.body;
+    console.log("Request body:", req.body);
 
     try {
         const updatedData = await loginModel.findOneAndUpdate(
-            { username: username },
+            { uid },
             updateData,
             { new: true }
         );
@@ -13,11 +14,10 @@ async function getData(req, res) {
         if (!updatedData) {
             return res.status(404).json({ message: 'User not found' });
         }
-
-        console.log(updatedData);
-        res.status(200).json({ message: `Data Updated Successfully: ${updatedData}` });
+        const updatedUserData = await loginModel.find({uid:uid})
+        res.status(200).json({ message: `Data Updated Successfully`, updatedUserData });
     } catch (error) {
-        console.error(error);
+        console.error("Error updating data:", error);
         res.status(500).json({ message: 'Internal Server Error' });
     }
 }

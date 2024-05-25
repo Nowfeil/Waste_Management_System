@@ -81,28 +81,28 @@ export default function Home({isLoggedIn,userData}) {
         <section id="treatement" className="treatement">
                 <h2>We Treat</h2>
             <div className='container d-flex' style={{gap:"10px"}}>
-                <figure class="figure">
-                    <img src={e_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
-                    <figcaption class="figure-caption">E Waste</figcaption>
-                </figure><figure class="figure">
-                    <img src={food_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
-                    <figcaption class="figure-caption">Food Waste</figcaption>
+                <figure className="figure">
+                    <img src={e_waste} className="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption className="figure-caption">E Waste</figcaption>
+                </figure><figure className="figure">
+                    <img src={food_waste} className="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption className="figure-caption">Food Waste</figcaption>
                 </figure>
-                <figure class="figure">
-                    <img src={glass_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
-                    <figcaption class="figure-caption">Glass Waste</figcaption>
+                <figure className="figure">
+                    <img src={glass_waste} className="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption className="figure-caption">Glass Waste</figcaption>
                 </figure>
-                <figure class="figure">
-                    <img src={medical_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
-                    <figcaption class="figure-caption">Medical Waste</figcaption>
+                <figure className="figure">
+                    <img src={medical_waste} className="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption className="figure-caption">Medical Waste</figcaption>
                 </figure>
-                <figure class="figure">
-                    <img src={metallic_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
-                    <figcaption class="figure-caption">Metallic Waste</figcaption>
+                <figure className="figure">
+                    <img src={metallic_waste} className="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption className="figure-caption">Metallic Waste</figcaption>
                 </figure>
-                <figure class="figure">
-                    <img src={plastic_waste} class="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
-                    <figcaption class="figure-caption">Plastic Waste</figcaption>
+                <figure className="figure">
+                    <img src={plastic_waste} className="figure-img img-fluid rounded" alt="..." width={"250px"} height={"200px"}/>
+                    <figcaption className="figure-caption">Plastic Waste</figcaption>
                 </figure>
             </div>
         </section>

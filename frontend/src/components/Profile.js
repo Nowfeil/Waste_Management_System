@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Profile({ setIsLoggedIn, userData }) {
+export default function Profile({userData,setUserData }) {
   const [email, setEmail] = useState(userData.email);
   const [uname, setUname] = useState(userData.username);
   const [address, setAddress] = useState(userData.address);
@@ -8,16 +8,16 @@ export default function Profile({ setIsLoggedIn, userData }) {
   const [edit, setEdit] = useState(false);
   const [text, setText] = useState('Edit');
   const [save, setSave] = useState(false);
-
   useEffect(() => {
     if (save) {
       const data = {
+        uid:userData.uid,
         email,
         username: uname,
         address,
         phone,
       };
-
+      setUserData(data);
       fetch("http://localhost:4000/api/users/profile", {
         method: "PUT",
         headers: {
@@ -27,6 +27,7 @@ export default function Profile({ setIsLoggedIn, userData }) {
       })
       .then((response) => response.json())
       .then((data) => {
+
         console.log(data);
         setSave(false);
       })

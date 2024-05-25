@@ -56,7 +56,7 @@ function App() {
           <Route path="/profile" element={
             <>
               <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
-              <Profile setIsLoggedIn={setIsLoggedIn} userData={userData}/>
+              <Profile userData={userData} setUserData = {setUserData}/>
               <Footer />
             </>
           }/>
@@ -84,7 +84,7 @@ function App() {
           <Route path="/issuereport" element={
             <>
               <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
-              <IssueReport isLoggedIn={isLoggedIn} userData={userData}/>
+              <IssueReport isLoggedIn={isLoggedIn} userData={userData} complaint={complaint} lodgeComplaint={lodgeComplaint}/>
               <Footer />
             </>
         }/>

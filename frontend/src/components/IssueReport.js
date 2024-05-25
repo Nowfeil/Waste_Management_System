@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { useLocation } from 'react-router-dom';
 
 const IssueReport = ({ isLoggedIn,userData }) => {
   const [submit, setSubmit] = useState(false);
   const navigate = useNavigate();
 
+  // const [formData, setFormData] = useState({
+  //   uid: '',
+  //   issueType: '',
+  //   issueDescription: ''
+    
+  // });
+  const location = useLocation();
+  const { data } = location.state || {};
   const [formData, setFormData] = useState({
     uid: '',
+    collectionId:'',
     issueType: '',
     issueDescription: ''
-    
   });
 
   useEffect(() => {
@@ -29,7 +38,9 @@ const IssueReport = ({ isLoggedIn,userData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     formData.uid = userData.uid;
+    formData.collectionId = data;
     console.log('Form submitted:', formData);
+
     fetch("http://localhost:4000/api/issues/", {
       method: "POST",
       headers: {
@@ -88,4 +99,3 @@ const IssueReport = ({ isLoggedIn,userData }) => {
 };
 
 export default IssueReport;
-
