@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { Link } from 'react-router-dom';
 import '../css/issue.css';
 
-function DisplayWaste({ userData, isLoggedIn, scheduled, setSchedule }) {
+function DisplayWaste({ userData, isLoggedIn, scheduled, setSchedule,lodgeComplaint}) {
   const [waste, setWaste] = useState([]);
   const [editingId, setEditingId] = useState(null);
   const [formData, setFormData] = useState({
@@ -41,9 +40,21 @@ function DisplayWaste({ userData, isLoggedIn, scheduled, setSchedule }) {
     try {
       await fetch(`http://localhost:4000/api/collections/${cid}`, { method: "DELETE" });
       setSchedule(scheduled - 1);
+      
       fetchData();
     } catch {
       console.log("Error in deleting the data");
+    }
+
+    try{
+      const response = await fetch('http://localhost:4000/api/issues');
+      const data = await response.json();
+      console.log("after",data);
+      console.log("length:",data.length)
+      lodgeComplaint(data.length)
+    }
+    catch {
+      console.log("Error in deleting the data of this deleted collection");
     }
   };
 
@@ -59,10 +70,16 @@ function DisplayWaste({ userData, isLoggedIn, scheduled, setSchedule }) {
       });
     }
   };
-
+  const handleReport=async (cid)=>{
+      try{
+          navigate('/issuereport', { state: { data: cid } })
+      }
+      catch{
+        console.log("Error in navigating to report page")
+      }
+  }
   const handleSave = async () => {
     try {
-      console.log(editingId);
       await fetch(`http://localhost:4000/api/collections/${editingId}`, {
         method: "PUT",
         headers: {
@@ -127,7 +144,8 @@ function DisplayWaste({ userData, isLoggedIn, scheduled, setSchedule }) {
                     {editingId === row.collectionId ? 'Save' : 'Update'}
                   </button>
                   <button className="btn btn-danger" onClick={() => handleDelete(row.collectionId)}>Delete</button>
-                  <Link to="/issuereport"><button className="btn btn-secondary">Report</button></Link>
+                  {/* <Link to="/issuereport"><button className="btn btn-secondary">Report</button></Link> */}
+                  <button className="btn btn-secondary" onClick={() => handleReport(row.collectionId)}>Report</button>
                 </div>
               </div>
             </div>
@@ -139,3 +157,6 @@ function DisplayWaste({ userData, isLoggedIn, scheduled, setSchedule }) {
 }
 
 export default DisplayWaste;
+
+
+

@@ -13,5 +13,3 @@ const issueModel = mongoose.model("Issues",IssueSchema)
 
 module.exports = issueModel
 
-
-schema

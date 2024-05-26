@@ -17,6 +17,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData,setUserData] = useState('')
   const [scheduled,setSchedule] = useState(0);
+  const [issue, setIssue] = useState([]);
   const [complaint,lodgeComplaint] = useState(0);
   console.log(`http:localhost:4000/api/collections/${userData.uid}`);
   useEffect(()=>{
@@ -77,7 +78,7 @@ function App() {
           <Route path="/getWaste" element={
             <>
               <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
-              <DisplayWaste isLoggedIn={isLoggedIn} userData={userData} scheduled={scheduled} setSchedule={setSchedule}/>
+              <DisplayWaste isLoggedIn={isLoggedIn} userData={userData} scheduled={scheduled} setSchedule={setSchedule} lodgeComplaint={lodgeComplaint}/>
               <Footer />
             </>
           }/>
@@ -91,7 +92,7 @@ function App() {
         <Route path="/displayissues" element={
             <>
               <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
-              <DisplayIssues isLoggedIn={isLoggedIn} userData={userData}/>
+              <DisplayIssues isLoggedIn={isLoggedIn} userData={userData} complaint={complaint} lodgeComplaint={lodgeComplaint} issue={issue} setIssue={setIssue}/>
               <Footer />
             </>
         }/>
