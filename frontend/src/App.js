@@ -13,6 +13,7 @@ import Dashboard from './components/Dashboard';
 import IssueReport from './components/IssueReport'
 import DisplayWaste from './components/DisplayWaste'
 import DisplayIssues from './components/DisplayIssues';
+import AdminDashboard from './components/AdminDashboard';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData,setUserData] = useState('')
@@ -96,7 +97,13 @@ function App() {
               <Footer />
             </>
         }/>
+        <Route path="/admin" element={
+            <>
+              <AdminDashboard/>
+            </>
+        }/>
         </Routes>
+        
       </Router>
     </>
   );
