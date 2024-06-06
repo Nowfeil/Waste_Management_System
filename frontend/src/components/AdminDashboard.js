@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import User from "../images/image.jpg";
 import Issue from "../images/alert.jpg";
 import Waste from "../images/recycle-bin.jpg";
-
+import { Link } from 'react-router-dom';
 const AdminDashboard = () => {
     const [tempArray, setTempArray] = useState([
         { UserId: 1234567, Name: "Mark", Description: "Collect Waste", Status: "completed" },
@@ -52,6 +52,7 @@ const AdminDashboard = () => {
                         <div className="card-body">
                             <p className='card-text text-center'>0</p>
                             <p className="card-text">All Users</p>
+                            <Link to="/allusers">View</Link>
                         </div>
                     </div>
                 </div>
