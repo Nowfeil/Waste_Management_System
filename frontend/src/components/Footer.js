@@ -5,7 +5,7 @@ export default function Footer() {
     <div>
       <footer>
         <p>&copy; 2024 WasteWise. All rights reserved.</p>
-        </footer>
+      </footer>
     </div>
   )
 }

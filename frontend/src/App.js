@@ -72,7 +72,7 @@ function App() {
           <Route path="/dashboard" element={
             <>
               <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
-              <Dashboard isLoggedIn={isLoggedIn} scheduled={scheduled} complaint={complaint}/>
+              <Dashboard isLoggedIn={isLoggedIn} scheduled={scheduled} complaint={complaint} userData={userData}/>
               <Footer />
             </>
           }/>
@@ -99,7 +99,7 @@ function App() {
         }/>
         <Route path="/admin" element={
             <>
-              <AdminDashboard/>
+              <AdminDashboard />
             </>
         }/>
         </Routes>

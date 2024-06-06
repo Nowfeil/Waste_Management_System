@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import User from "../images/image.jpg";
 import Issue from "../images/alert.jpg";
 import Waste from "../images/recycle-bin.jpg";
@@ -35,6 +35,7 @@ const AdminDashboard = () => {
         updatedArr[idx].Status="completed"
         setTempArray(updatedArr)
     }
+
     return (
         <>
             <style>

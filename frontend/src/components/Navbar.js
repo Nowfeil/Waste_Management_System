@@ -44,10 +44,7 @@ export default function Navbar({ isLoggedIn ,userData}) {
               )}
             </div>
           </div>
-          {isLoggedIn && greet &&<div className='navbar-text ms-auto' style={{ fontSize: '1rem' }}>
-            {<h3>Welcome {userData.username}</h3>}
-          </div>
-          }
+          
         </div>
       </nav>
     </div>

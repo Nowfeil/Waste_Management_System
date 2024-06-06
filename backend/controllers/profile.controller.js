@@ -1,7 +1,7 @@
 const loginModel = require('../model/login.model');
 
 async function getData(req, res) {
-    const { uid, username, ...updateData } = req.body;
+    const { uid, ...updateData } = req.body;
     console.log("Request body:", req.body);
 
     try {
@@ -14,6 +14,7 @@ async function getData(req, res) {
         if (!updatedData) {
             return res.status(404).json({ message: 'User not found' });
         }
+        console.log(updateData);
         const updatedUserData = await loginModel.find({uid:uid})
         res.status(200).json({ message: `Data Updated Successfully`, updatedUserData });
     } catch (error) {
