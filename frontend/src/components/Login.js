@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/styles.css';
-
-export default function Login({ setIsLoggedIn ,setUserData}) {
+export default function Login({ setIsLoggedIn, setUserData }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -40,7 +39,7 @@ export default function Login({ setIsLoggedIn ,setUserData}) {
   };
 
   return (
-    <div>
+    <div className="background-container">
       <main className="form-container">
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>

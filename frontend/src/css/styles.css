@@ -146,7 +146,7 @@ footer {
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    background-color:#E0FBE2
+    /* background-color:#E0FBE2 */
 }
 
 .card-title {
@@ -163,3 +163,43 @@ footer {
 .card-body {
     padding: 1.5rem;
 }
+
+.background-container {
+  background-image: url('../images/background_1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.dash{
+    background-image:url('../images/background_3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.dabba {
+    border-radius: 10px;
+    animation: transform ease 1s;
+}
+
+.dabba:hover {
+    transform: scale(1.05);
+}
+

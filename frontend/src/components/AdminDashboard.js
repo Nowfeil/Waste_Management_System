@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import User from "../images/image.jpg";
 import Issue from "../images/alert.jpg";
 import Waste from "../images/recycle-bin.jpg";
+
 import { Link } from 'react-router-dom';
 const AdminDashboard = () => {
     const [tempArray, setTempArray] = useState([
@@ -43,9 +44,10 @@ const AdminDashboard = () => {
                     th {
                         user-select: none;
                     }
+                    
                 `}
             </style>
-            <h2 className='text-center'>Admin Dashboard</h2>
+            <h2 className='text-center dash'>Admin Dashboard</h2>
             <div className='container d-flex justify-content-center align-items-center p-3' style={{ gap: "20px" }}>
                 <div className="card p-2" style={{ width: "18rem;" }} >
                     <div className='container'>

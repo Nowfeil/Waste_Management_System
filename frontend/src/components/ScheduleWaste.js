@@ -51,9 +51,10 @@ const ScheduleWaste = ({userData,isLoggedIn,setSchedule,scheduled,isDelete,setIs
       
   };
   return (
-    <div className='container'>
+    <div className='outer'>
+    <div className='container' >
       <h2 className='text-center'>Schedule Waste Here!!</h2>
-      <form className="waste-form" onSubmit={handleSubmit}>
+      <form className="waste-form" onSubmit={handleSubmit} style={{backgroundColor:"rgba(211, 211, 211, 0.5)"}}>
         <div className="form-group">
           <label htmlFor="collectionDate">Collection Date</label>
           <input
@@ -87,6 +88,7 @@ const ScheduleWaste = ({userData,isLoggedIn,setSchedule,scheduled,isDelete,setIs
         </div>
         <button type="submit" className="btn">Schedule waste</button>
       </form>
+    </div>
     </div>
   );
 };

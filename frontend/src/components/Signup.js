@@ -42,7 +42,7 @@ export default function Signup({setIsLoggedIn,setUserData}) {
   };
 
   return (
-    <div>
+    <div className="background-container">
       <main className="form-container">
         <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>

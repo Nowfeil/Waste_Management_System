@@ -53,3 +53,13 @@
   .btn:hover {
     background-color: #E64A19;
   }
+
+  .outer{
+    background-image:url('../images/background_4.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+  }
+  
