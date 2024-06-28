@@ -164,6 +164,10 @@ footer {
     padding: 1.5rem;
 }
 
+.card-body:hover{
+    background-color:#E0FBE2;
+}
+
 .background-container {
   background-image: url('../images/background_1.png');
   background-size: cover;
@@ -182,24 +186,5 @@ footer {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-.dash{
-    background-image:url('../images/background_3.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
-}
-
-.dabba {
-    border-radius: 10px;
-    animation: transform ease 1s;
-}
-
-.dabba:hover {
-    transform: scale(1.05);
 }
 

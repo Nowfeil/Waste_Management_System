@@ -4,7 +4,7 @@ async function reportIssue(req,res){
     const dateInMillisecs = new Date().getTime();
     const issueId = Math.round(dateInMillisecs / 1000);
     const newIssue=await issueModel.create({
-       uid,issueId,issueType,issueDescription,status:"not approved",collectionId
+       uid,issueId,issueType,issueDescription,status:"Pending",collectionId
     
     })
     res.send(newIssue)

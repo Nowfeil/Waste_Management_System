@@ -37,28 +37,28 @@ export default function Dashboard({ isLoggedIn, scheduled, complaint, userData }
 
             <div className='container p-5'>
                 <div className='container d-flex justify-content-center' style={{ gap: '1rem' }}>
-                    <div className='dabba' style={{ backgroundColor: "rgba(211, 211, 211, 0.5)", width: "18rem" }}>
-                        <div className='card-body'>
+                    <div className='card mb-5 bg-body-tertiary rounded' style={{width: "18rem" }}>
+                        <div className='card-body p-4'>
                             <h5 className='card-title'>Total Lodged Complain</h5>
                             <p className='card-text my-2'>{complaint}</p>
                             <Link to="/displayissues">View Details</Link>
                         </div>
                     </div>
-                    <div className='dabba' style={{ backgroundColor: "rgba(211, 211, 211, 0.5)", width: "18rem" }}>
-                        <div className='card-body'>
+                    <div className='card mb-5 bg-body-tertiary rounded' style={{ width: "18rem" }}>
+                        <div className='card-body p-4'>
                             <h5 className='card-title'>Pending Lodged Complain</h5>
                             <p className='card-text my-2'>0</p>
                         </div>
                     </div>
-                    <div className='dabba' style={{ backgroundColor: "rgba(211, 211, 211, 0.5)", width: "18rem" }}>
-                        <div className='card-body'>
+                    <div className='card mb-5 bg-body-tertiary rounded' style={{width: "18rem" }}>
+                        <div className='card-body p-4' >
                             <h5 className='card-title'>Total Waste Scheduled</h5>
                             <p className='card-text'>{scheduled}</p>
                             <Link to="/getWaste">View Details</Link>
                         </div>
                     </div>
-                    <div className='dabba' style={{ backgroundColor: "rgba(211, 211, 211, 0.5)", width: "18rem" }}>
-                        <div className='card-body'>
+                    <div className='card mb-5 bg-body-tertiary rounded' style={{ width: "18rem" }}>
+                        <div className='card-body p-4'>
                             <h5 className='card-title'>Scheduled Waste Completed</h5>
                             <p className='card-text'>0</p>
                         </div>
