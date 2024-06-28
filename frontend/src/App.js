@@ -15,6 +15,8 @@ import DisplayWaste from './components/DisplayWaste'
 import DisplayIssues from './components/DisplayIssues';
 import AdminDashboard from './components/AdminDashboard';
 import AllUsers from './components/AllUsers';
+import AllWastes from './components/AllWastes';
+import AllIssues from './components/AllIssues'
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData,setUserData] = useState('')
@@ -106,6 +108,16 @@ function App() {
         <Route path="/allusers" element={
             <>
               <AllUsers/>
+            </>
+        }/>
+        <Route path="/allwastes" element={
+            <>
+              <AllWastes/>
+            </>
+        }/>
+        <Route path="/allissues" element={
+            <>
+              <AllIssues/>
             </>
         }/>
         </Routes>
