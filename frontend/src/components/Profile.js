@@ -63,7 +63,7 @@ export default function Profile({userData,setUserData }) {
 
   return (
     <div>
-      <div className='container'>
+      <div className='container my-5 p-3' style={{"minHeight": "100vh"}}>
         <h1 className='text-center'>Profile</h1>
         <div className="form-floating mb-3" style={{ gap: "20px" }}>
           <input

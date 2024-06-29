@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-export default function Dashboard({ isLoggedIn, scheduled, complaint, userData }) {
+export default function Dashboard({ isLoggedIn, scheduled, complaint, userData, pending }) {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -12,6 +12,9 @@ export default function Dashboard({ isLoggedIn, scheduled, complaint, userData }
     }, [isLoggedIn]);
 
     const [greet, setGreeting] = useState(false);
+    
+
+    
 
     useEffect(() => {
         if (isLoggedIn) {
@@ -28,7 +31,7 @@ export default function Dashboard({ isLoggedIn, scheduled, complaint, userData }
     }
 
     return (
-        <div className='dash'>
+        <div className='dash' style={{"minHeight": "100vh"}}>
             {isLoggedIn && greet &&
                 <div className="alert alert-success text-center" role="alert">
                     Welcome {userData.username}
@@ -47,7 +50,7 @@ export default function Dashboard({ isLoggedIn, scheduled, complaint, userData }
                     <div className='card mb-5 bg-body-tertiary rounded' style={{ width: "18rem" }}>
                         <div className='card-body p-4'>
                             <h5 className='card-title'>Pending Lodged Complain</h5>
-                            <p className='card-text my-2'>0</p>
+                            <p className='card-text my-2'>{pending}</p>
                         </div>
                     </div>
                     <div className='card mb-5 bg-body-tertiary rounded' style={{width: "18rem" }}>

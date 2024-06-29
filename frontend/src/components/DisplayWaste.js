@@ -95,7 +95,7 @@ function DisplayWaste({ userData, isLoggedIn, scheduled, setSchedule,lodgeCompla
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container p-4 mb-5" style={{"minHeight": "100vh"}}>
       <h1 className="text-center mb-4">Scheduled Waste</h1>
       <div className="row">
         {waste.map((row) => (

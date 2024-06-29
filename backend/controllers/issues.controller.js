@@ -40,12 +40,12 @@ async function getIssuebyCollectionIn(req,res){
 async function updateIssueById(req,res){
     const id=req.params.id
     console.log("request body",req.body);
-    const {uid,issueType,issueDescription}=req.body
+    const {uid,issueType,issueDescription,status}=req.body
     const issueData=await issueModel.updateMany({issueId:id},{$set:{
             "uid":uid,
             "issueType":issueType,
             "issueDescription":issueDescription,
-            "status":"not approved"
+            "status":status
         }
     })
         const updatedData=await issueModel.find({uid:uid})

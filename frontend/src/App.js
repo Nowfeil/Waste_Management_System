@@ -17,19 +17,28 @@ import AdminDashboard from './components/AdminDashboard';
 import AllUsers from './components/AllUsers';
 import AllWastes from './components/AllWastes';
 import AllIssues from './components/AllIssues'
+import Contactus from './components/Contactus';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData,setUserData] = useState('')
   const [scheduled,setSchedule] = useState(0);
   const [issue, setIssue] = useState([]);
   const [complaint,lodgeComplaint] = useState(0);
+  const [complaintData,getComplaintData] = useState('')
+  const [pending, setPending] = useState(0);
   console.log(`http:localhost:4000/api/collections/${userData.uid}`);
   useEffect(()=>{
     fetch(`http://localhost:4000/api/collections/${userData.uid}`).then((response)=>response.json()).then((data)=>setSchedule(data.length))
-    fetch(`http://localhost:4000/api/issues/${userData.uid}`).then((response)=>response.json()).then((data)=>lodgeComplaint(data.length))
-  },[isLoggedIn,userData])
+    fetch(`http://localhost:4000/api/issues/${userData.uid}`).then((response)=>response.json()).then((data)=>{
+      lodgeComplaint(data.length)
+      getComplaintData(data)
+  })
+  if (isLoggedIn) {
+    const pendingCount = complaintData.filter(issues => issues.status === "Pending").length;
+    setPending(pendingCount);
+}
+  },[isLoggedIn,userData,complaintData])
 
-  
   return (
     <>
       <Router>
@@ -75,7 +84,7 @@ function App() {
           <Route path="/dashboard" element={
             <>
               <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
-              <Dashboard isLoggedIn={isLoggedIn} scheduled={scheduled} complaint={complaint} userData={userData}/>
+              <Dashboard isLoggedIn={isLoggedIn} scheduled={scheduled} complaint={complaint} userData={userData} pending={pending}/>
               <Footer />
             </>
           }/>
@@ -118,6 +127,11 @@ function App() {
         <Route path="/allissues" element={
             <>
               <AllIssues/>
+            </>
+        }/>
+        <Route path="/contactus" element={
+            <>
+              <Contactus/>
             </>
         }/>
         </Routes>
