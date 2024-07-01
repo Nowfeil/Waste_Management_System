@@ -131,7 +131,9 @@ function App() {
         }/>
         <Route path="/contactus" element={
             <>
+            <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
               <Contactus/>
+              <Footer />
             </>
         }/>
         </Routes>

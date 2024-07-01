@@ -52,9 +52,9 @@ const ScheduleWaste = ({userData,isLoggedIn,setSchedule,scheduled,isDelete,setIs
   };
   return (
     <div className='outer' style={{"minHeight": "100vh"}}>
-    <div className='container' >
-      <h2 className='text-center'>Schedule Waste Here!!</h2>
-      <form className="waste-form" onSubmit={handleSubmit} style={{backgroundColor:"rgba(211, 211, 211, 0.5)"}}>
+    <div className='container'>
+      <h2 className='text-center my-5'>Schedule Waste Here!!</h2>
+      <form className="waste-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="collectionDate">Collection Date</label>
           <input

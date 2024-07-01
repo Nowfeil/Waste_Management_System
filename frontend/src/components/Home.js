@@ -81,27 +81,27 @@ export default function Home({isLoggedIn, userData}) {
         <section id="treatement" className="treatement">
           <h2>We Treat</h2>
           <div className='container d-flex' style={{gap:"10px"}}>
-            <figure className="figure">
+            <figure className="figure fig">
               <img src={e_waste} className="figure-img img-fluid rounded" alt="E Waste" width={"250px"} height={"200px"}/>
               <figcaption className="figure-caption">E Waste</figcaption>
             </figure>
-            <figure className="figure">
+            <figure className="figure fig">
               <img src={food_waste} className="figure-img img-fluid rounded" alt="Food Waste" width={"250px"} height={"200px"}/>
               <figcaption className="figure-caption">Food Waste</figcaption>
             </figure>
-            <figure className="figure">
+            <figure className="figure fig">
               <img src={glass_waste} className="figure-img img-fluid rounded" alt="Glass Waste" width={"250px"} height={"200px"}/>
               <figcaption className="figure-caption">Glass Waste</figcaption>
             </figure>
-            <figure className="figure">
+            <figure className="figure fig">
               <img src={medical_waste} className="figure-img img-fluid rounded" alt="Medical Waste" width={"250px"} height={"200px"}/>
               <figcaption className="figure-caption">Medical Waste</figcaption>
             </figure>
-            <figure className="figure">
+            <figure className="figure fig">
               <img src={metallic_waste} className="figure-img img-fluid rounded" alt="Metallic Waste" width={"250px"} height={"200px"}/>
               <figcaption className="figure-caption">Metallic Waste</figcaption>
             </figure>
-            <figure className="figure">
+            <figure className="figure fig">
               <img src={plastic_waste} className="figure-img img-fluid rounded" alt="Plastic Waste" width={"250px"} height={"200px"}/>
               <figcaption className="figure-caption">Plastic Waste</figcaption>
             </figure>

@@ -6,7 +6,7 @@ export default function Contactus() {
   return (
     <>
     <div className='container p-5 d-flex m-5' >
-        <div className='container p-4'style={{border:"1px solid #109484",backgroundColor:"#EFF7F6"}}>
+        <div className='container p-4'style={{backgroundColor:"#edf6e3",borderRadius:"10px",border:"0.1px solid #edf6e3"}}>
             <h3>Contact Us</h3>
             <form className='p-2' >
                     <div className='form-group'>
@@ -21,7 +21,8 @@ export default function Contactus() {
                         <label for='message'>Message</label>
                         <textarea className='form-control' id='message' rows='3' style={{width:"100%"}}></textarea>
                     </div>
-                    <button type='submit' className='btn' style={{backgroundColor:'#109484'}}>Send Message</button>
+                    <button type='submit' className='btn' style={{backgroundColor:'#abd676'}}>Send Message</button>
+
                     </form>
         </div>
         <div className='container-fluid'>

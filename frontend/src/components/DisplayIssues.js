@@ -78,7 +78,7 @@ function DisplayIssues({ userData, isLoggedIn, complaint, lodgeComplaint, issue,
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4" style={{"minHeight": "100vh"}}>
       <h1 className="text-center">Lodged Complaints</h1>
       <table className="table table-hover">
         <thead className="table-dark">
@@ -122,18 +122,19 @@ function DisplayIssues({ userData, isLoggedIn, complaint, lodgeComplaint, issue,
                 </td>
                 <td>{row.status}</td>
                 <td>
-                  <button
-                    className="btn btn-primary me-4"
-                    onClick={() => {
-                      if (editingId === row.issueId) {
-                        handleSave();
-                      } else {
-                        handleEdit(row);
-                      }
-                    }}
-                  >
-                    {editingId === row.issueId ? 'Save' : 'Update'}
-                  </button>
+                  {row.status!=="resolved"&&<button
+                      className="btn btn-primary me-4"
+                      onClick={() => {
+                        if (editingId === row.issueId) {
+                          handleSave();
+                        } else {
+                          handleEdit(row);
+                        }
+                      }}
+                    >
+                      {editingId === row.issueId ? 'Save' : 'Update'}
+                    </button>
+                  }
                   <button className="btn btn-danger" onClick={() => handleDelete(row.issueId)}>Delete</button>
                 </td>
               </tr>

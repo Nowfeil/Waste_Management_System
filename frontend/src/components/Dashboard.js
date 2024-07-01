@@ -31,14 +31,14 @@ export default function Dashboard({ isLoggedIn, scheduled, complaint, userData, 
     }
 
     return (
-        <div className='dash' style={{"minHeight": "100vh"}}>
+        <div className='dash ' style={{"minHeight": "100vh"}} >
             {isLoggedIn && greet &&
                 <div className="alert alert-success text-center" role="alert">
                     Welcome {userData.username}
                 </div>
             }
 
-            <div className='container p-5'>
+            <div className='container p-5 '>
                 <div className='container d-flex justify-content-center' style={{ gap: '1rem' }}>
                     <div className='card mb-5 bg-body-tertiary rounded' style={{width: "18rem" }}>
                         <div className='card-body p-4'>

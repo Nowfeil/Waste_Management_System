@@ -153,7 +153,7 @@ const IssueReport = ({ isLoggedIn,userData,complaint,lodgeComplaint }) => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" style={{"minHeight": "100vh"}}>
       <h2>Report an Issue</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group mb-3">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import '../css/profile.css'
 export default function Profile({userData,setUserData }) {
   const [email, setEmail] = useState(userData.email);
   const [uname, setUname] = useState(userData.username);
@@ -63,9 +63,10 @@ export default function Profile({userData,setUserData }) {
 
   return (
     <div>
-      <div className='container my-5 p-3' style={{"minHeight": "100vh"}}>
-        <h1 className='text-center'>Profile</h1>
-        <div className="form-floating mb-3" style={{ gap: "20px" }}>
+      <div className='container p-3' style={{"minHeight": "100vh"}}>
+        <div className='container my-3 d-flex justify-content-center align-items-center flex-column p-4 profileDiv' style={{ width:"600px" ,borderRadius:"20px"}}>
+          <h1 className='text-center m-4'>Profile</h1>
+        <div className="form-floating mb-3" style={{ gap: "20px", width:"500px" }}>
           <input
             type="email"
             className="form-control"
@@ -76,7 +77,7 @@ export default function Profile({userData,setUserData }) {
           />
           <label htmlFor="floatingInput">Email address</label>
         </div>
-        <div className="form-floating mb-3 d-flex" style={{ gap: "20px" }}>
+        <div className="form-floating mb-3 d-flex" style={{ gap: "20px",width:"500px"  }}>
           <input
             type="text"
             className="form-control"
@@ -87,7 +88,7 @@ export default function Profile({userData,setUserData }) {
           />
           <label htmlFor="floatingInput">Username</label>
         </div>
-        <div className="form-floating mb-3 d-flex" style={{ gap: "20px" }}>
+        <div className="form-floating mb-3 d-flex" style={{ gap: "20px",width:"500px"  }}>
           <input
             type="text"
             className="form-control"
@@ -98,7 +99,7 @@ export default function Profile({userData,setUserData }) {
           />
           <label htmlFor="floatingInput">Mobile Number</label>
         </div>
-        <div className="form-floating mb-3 d-flex" style={{ gap: "20px" }}>
+        <div className="form-floating mb-3 d-flex" style={{ gap: "20px",width:"500px"  }}>
           <input
             type="text"
             className="form-control"
@@ -112,6 +113,8 @@ export default function Profile({userData,setUserData }) {
         <div className='container p-2 d-flex justify-content-center align-content-center'>
           <button className='btn btn-primary' onClick={handleEdit}>{text}</button>
         </div>
+        </div>
+        
       </div>
     </div>
   );

@@ -140,3 +140,9 @@ footer p {
 footer{
     position: relative;
 }
+.fig img{
+    transition: 0.5s all ease-in-out;
+}
+.fig img:hover{
+    transform: scale(1.09);
+}

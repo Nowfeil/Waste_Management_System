@@ -4,7 +4,7 @@ const AllUsers = () => {
     const [issues, setIssues] = useState([]);
     const [sortDirection, setSortDirection] = useState('asc');
     const [sortBy, setSortBy] = useState(null);
-
+    const [change,setChange]=useState(false);
     const fetchData = async () => {
         try {
             const response = await fetch('http://localhost:4000/api/admin/allissues', { method: 'GET' });
@@ -17,7 +17,7 @@ const AllUsers = () => {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [change]);
 
     const handleHeaderDoubleClick = (header) => {
         const direction = sortDirection === 'asc' ? 'desc' : 'asc';
@@ -44,6 +44,7 @@ const AllUsers = () => {
                 },
                 body: JSON.stringify({ status: 'resolved' }),
             });
+            setChange(true);
 
             const updatedIssue = await response.json();
 

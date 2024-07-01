@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import logo from'../images/trash-bin.gif'
+import { Link} from 'react-router-dom';
 export default function Navbar({ isLoggedIn ,userData}) {
-  const navigate = useNavigate();
   const [greet,setGreeting] = useState(false)
   useEffect(()=>{
     if(isLoggedIn){
@@ -15,7 +13,7 @@ export default function Navbar({ isLoggedIn ,userData}) {
   },[isLoggedIn])
   return (
 <>    
-    <div style={{ backgroundColor: 'green' }}>
+    <div style={{ backgroundColor: "#8dd437" }}>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/"><img className='img img-fluid' src="https://cdn.iconscout.com/icon/premium/png-512-thumb/waste-management-4083896-3407715.png?f=webp&w=256" width={"40px"}></img>Waste Management</Link>
