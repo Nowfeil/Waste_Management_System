@@ -63,14 +63,11 @@ async function getAllCollections(req,res){
 }
 async function getCollectionById(req,res){
     const id=req.params.id
-    console.log("userid"+id);
     const collection = await CollectionModel.find({ uid: id });
-    console.log(collection)
     res.status(200).send(collection)
 }
 async function updateCollection(req,res){
     const id=req.params.id
-    console.log(id);
     const { ...data}=req.body
     const collection = await CollectionModel.findOneAndUpdate({ collectionId: id },
         { $set: req.body },
@@ -80,11 +77,8 @@ async function updateCollection(req,res){
 }
 async function deleteCollection(req,res){
     id=req.params.id
-    console.log("id : ",id);
     const collection = await CollectionModel.findOneAndDelete({collectionId:id})
     const issuecollection = await IssueModel.deleteMany({collectionId:id})
-    console.log("collection : ",collection)
-    console.log("issues : ",issuecollection)
     res.status(200).send(collection)
 }
 module.exports ={ scheduleWaste, getAllCollections, getCollectionById, updateCollection, deleteCollection }

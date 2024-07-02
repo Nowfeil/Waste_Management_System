@@ -13,10 +13,10 @@ export default function Navbar({ isLoggedIn ,userData}) {
   },[isLoggedIn])
   return (
 <>    
-    <div style={{ backgroundColor: "#8dd437" }}>
+    <div style={{ backgroundColor: "green" }}>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/"><img className='img img-fluid' src="https://cdn.iconscout.com/icon/premium/png-512-thumb/waste-management-4083896-3407715.png?f=webp&w=256" width={"40px"}></img>Waste Management</Link>
+          <Link className="navbar-brand" to="/" style={{font:""}}><img className='img img-fluid' src="https://cdn.iconscout.com/icon/premium/png-512-thumb/waste-management-4083896-3407715.png?f=webp&w=256" width={"40px"}></img>Waste Management</Link>
           {isLoggedIn ? (
                 <>
                   <Link className="nav-link active" aria-current="page" to="/dashboard">Dashboard</Link>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Loading from './Loading';
 
 export default function Dashboard({ isLoggedIn, scheduled, complaint, userData, pending }) {
     const navigate = useNavigate();
@@ -26,10 +27,24 @@ export default function Dashboard({ isLoggedIn, scheduled, complaint, userData, 
         }
     }, [isLoggedIn]);
 
+    const [loading, setLoading] = useState(true);
+
+    useEffect(()=>{
+        setTimeout(()=>{
+          setLoading(false)
+        },2000)
+      },[])
+    
+    if(loading){
+    return <Loading/>
+    }
+
     if (!isLoggedIn) {
         return null;
     }
 
+    
+    
     return (
         <div className='dash ' style={{"minHeight": "100vh"}} >
             {isLoggedIn && greet &&

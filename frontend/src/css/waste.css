@@ -1,5 +1,6 @@
 .waste-form {
-    background-color: #E0FBE2;
+  /* background-color: rgba(211, 211, 211, 0.1); */
+  background-color: whitesmoke;
     padding: 2rem;
     max-width: 600px;
     margin: 2rem auto;
@@ -58,3 +59,7 @@
     background-color: #E64A19;
   }
 
+.outer{
+  background-color: #E7F0DC;
+  margin-top: -50px;
+}
