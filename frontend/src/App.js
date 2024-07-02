@@ -26,7 +26,6 @@ function App() {
   const [complaint,lodgeComplaint] = useState(0);
   const [complaintData,getComplaintData] = useState('')
   const [pending, setPending] = useState(0);
-  console.log(`http:localhost:4000/api/collections/${userData.uid}`);
   useEffect(()=>{
     fetch(`http://localhost:4000/api/collections/${userData.uid}`).then((response)=>response.json()).then((data)=>setSchedule(data.length))
     fetch(`http://localhost:4000/api/issues/${userData.uid}`).then((response)=>response.json()).then((data)=>{

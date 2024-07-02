@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/styles.css';
+
 export default function Login({ setIsLoggedIn, setUserData }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +15,7 @@ export default function Login({ setIsLoggedIn, setUserData }) {
 
     try {
       const response = await fetch('http://localhost:4000/api/auth/login', {
-        method: "POST",
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -23,12 +24,14 @@ export default function Login({ setIsLoggedIn, setUserData }) {
 
       const data = await response.json();
       console.log('Response status:', response.status);
+      console.log(data);
 
       if (response.status === 200) {
         console.log('Login successful, navigating to home');
-        setUserData(data);
+        setUserData(data.userData);
+        localStorage.setItem('token', data.token);
         setIsLoggedIn(true);
-        navigate("/dashboard");
+        navigate('/dashboard');
       } else {
         setMessage(data.message || 'Login failed');
       }
@@ -63,7 +66,7 @@ export default function Login({ setIsLoggedIn, setUserData }) {
           />
           <button type="submit" className="btn">Log In</button>
         </form>
-        {message && <p>{message}</p>}
+        {message && <p style={{ color: 'red' }}>{message}</p>}
         <p>Don't have an account? <Link to="/signup">Sign up here</Link>.</p>
       </main>
     </div>
