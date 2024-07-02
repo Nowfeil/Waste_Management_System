@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import '../css/waste.css';
 import Loading from './Loading';
 
-const ScheduleWaste = ({userData, isLoggedIn, setSchedule, scheduled, isDelete, setIsDelete}) => {
+const ScheduleWaste = ({userData, isLoggedIn, setSchedule, scheduled}) => {
   const [submit, isSubmit] = useState(false);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();

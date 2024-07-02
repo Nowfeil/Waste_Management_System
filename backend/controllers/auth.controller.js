@@ -29,9 +29,9 @@ async function signup(req, res) {
         if (existingUser) {
             return res.status(400).json({ message: `User with email ${email} already has an account. Please sign in.` });
         }
-
+        const data = await loginModel.find({});
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = await loginModel.create({ username, email, password: hashedPassword, address, phone });
+        const newUser = await loginModel.create({  uid:data.length+1,username, email, password: hashedPassword, address, phone });
         const payload = { id: newUser.id };
 
         jwt.sign(payload, process.env.SECRET_KEY, (err, token) => {
@@ -42,7 +42,7 @@ async function signup(req, res) {
             return res.status(200).json({ token, userData: newUser });
         });
     } catch (err) {
-        console.error("Error during signup:", err); // Log the error
+        console.error("Error during signup:", err); 
         return res.status(500).json({ message: "Error occurred while signing up", error: err.message });
     }
 }

@@ -26,7 +26,7 @@ export default function Signup({setIsLoggedIn,setUserData}) {
       const data = await response.json();
       if (response.status === 200) {
         console.log('Signin successful, navigating to home');
-        setUserData(data)
+        setUserData(data.userData)
         setIsLoggedIn(true)
         navigate("/dashboard");
       } else {
