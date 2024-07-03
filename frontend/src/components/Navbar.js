@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link} from 'react-router-dom';
+import logo_1 from "../images/logo_1.png"
 export default function Navbar({ isLoggedIn ,userData}) {
   const [greet,setGreeting] = useState(false)
   useEffect(()=>{
@@ -13,10 +14,10 @@ export default function Navbar({ isLoggedIn ,userData}) {
   },[isLoggedIn])
   return (
 <>    
-    <div style={{ backgroundColor: "green" }}>
+    <div style={{backgroundColor:"#D6EFD8"}}>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/" style={{font:""}}><img className='img img-fluid' src="https://cdn.iconscout.com/icon/premium/png-512-thumb/waste-management-4083896-3407715.png?f=webp&w=256" width={"40px"}></img>Waste Management</Link>
+          <Link className="navbar-brand" to="/"><img className='img img-fluid' src={logo_1} width={"100vw"} alt='logo'></img>Waste Wise</Link>
           {isLoggedIn ? (
                 <>
                   <Link className="nav-link active" aria-current="page" to="/dashboard">Dashboard</Link>

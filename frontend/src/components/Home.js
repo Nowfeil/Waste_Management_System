@@ -47,28 +47,29 @@ export default function Home({isLoggedIn, userData}) {
               <img src={waste_disposal} className="card-img-top" alt="Waste Disposal" width={"250px"} height={"200px"}/>
               <div className="card-body">
                 <h5 className="card-title">Waste Disposal</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className="card-text">several large waste bins or dumpsters, commonly used for waste disposal in a waste management system.</p>
               </div>
             </div>
             <div className="card" style={{width: "18rem;"}}>
               <img src={waste_treatement} className="card-img-top" alt="Waste Treatement" width={"250px"} height={"200px"}/>
               <div className="card-body">
                 <h5 className="card-title">Waste Treatement</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className="card-text"> Aerial view of a wastewater treatment facility which has several large, circular tanks used for various stages of sewage treatment</p>
               </div>
             </div>
             <div className="card" style={{width: "18rem;"}}>
               <img src={waste_recycling} className="card-img-top" alt="Waste Recycling" width={"250px"} height={"200px"}/>
               <div className="card-body">
                 <h5 className="card-title">Waste Recycling</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className="card-text">Multiple conveyor belts and machinery designed to sort and process various types of waste materials.</p>
               </div>
             </div>
             <div className="card" style={{width: "18rem;"}}>
               <img src={waste_transport} className="card-img-top" alt="Waste Collection and Transportation" width={"250px"} height={"200px"}/>
               <div className="card-body">
                 <h5 className="card-title">Waste Collection and Transportation</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className="card-text">
+                Waste collection and transportation involve the systematic gathering of waste from various sources and its transfer to disposal or processing facilities.</p>
               </div>
             </div>
           </div>

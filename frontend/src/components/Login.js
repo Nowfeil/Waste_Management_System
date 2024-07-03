@@ -44,7 +44,7 @@ export default function Login({ setIsLoggedIn, setUserData }) {
   return (
     <div className="background-container">
       <main className="form-container">
-        <h1>Login</h1>
+        <h1><center><strong>Login</strong></center></h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email:</label>
           <input
@@ -64,10 +64,10 @@ export default function Login({ setIsLoggedIn, setUserData }) {
             required
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit" className="btn">Log In</button>
+          <button type="submit" className="btn">Login</button>
         </form>
         {message && <p style={{ color: 'red' }}>{message}</p>}
-        <p>Don't have an account? <Link to="/signup">Sign up here</Link>.</p>
+        <p className='my-3'>Don't have an account? <Link to="/signup">Sign up here</Link>.</p>
       </main>
     </div>
   );
