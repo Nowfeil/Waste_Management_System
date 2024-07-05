@@ -32,7 +32,7 @@ export default function Dashboard({ isLoggedIn, scheduled, complaint, userData, 
     useEffect(()=>{
         setTimeout(()=>{
           setLoading(false)
-        },2000)
+        },500)
       },[])
     
     if(loading){
@@ -75,7 +75,7 @@ export default function Dashboard({ isLoggedIn, scheduled, complaint, userData, 
                             <Link to="/getWaste">View Details</Link>
                         </div>
                     </div>
-                    <div className='card mb-5 bg-body-tertiary rounded' style={{ width: "18rem" }}>
+                    <div className='card mb-5 bg-body-tertiary rounded' style={{ width: "18rem",display:"none" }}>
                         <div className='card-body p-4'>
                             <h5 className='card-title'>Scheduled Waste Completed</h5>
                             <p className='card-text'>0</p>

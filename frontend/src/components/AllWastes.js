@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect,useState } from 'react';
+import AdminProgress from './AdminProgress';
 export default function AllWastes() {
     const [wastes, getWastes] = useState([])
 
@@ -47,6 +48,7 @@ export default function AllWastes() {
           <th scope="col"  onDoubleClick={() => handleHeaderDoubleClick('collectionDate')} style={{cursor:"pointer"}}>Collection Scheduled Date</th>
           <th scope="col"  onDoubleClick={() => handleHeaderDoubleClick('address')} style={{cursor:"pointer"}}>Address</th>
           <th scope="col"  onDoubleClick={() => handleHeaderDoubleClick('notes')} style={{cursor:"pointer"}}>Notes</th>
+          <th scope="col"  style={{cursor:"pointer"}}><center>Status</center></th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +60,7 @@ export default function AllWastes() {
                 <td>{row.collectionDate}</td>
                 <td>{row.address}</td>
                 <td>{row.notes}</td>
+                <td><AdminProgress cid={row.collectionId}/></td>
             </tr>
             ))
         }

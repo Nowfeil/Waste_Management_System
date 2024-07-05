@@ -63,7 +63,13 @@ const ScheduleWaste = ({userData, isLoggedIn, setSchedule, scheduled}) => {
   if(loading){
     return <Loading/>
   }
-
+  const getCurrentDate = () => {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    const dd = String(today.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+  };
   return (
     <div className='outer' style={{"minHeight": "100vh"}}>
       <div className='container'>
@@ -77,6 +83,7 @@ const ScheduleWaste = ({userData, isLoggedIn, setSchedule, scheduled}) => {
                 name="collectionDate"
                 value={formData.collectionDate}
                 onChange={handleChange}
+                min={getCurrentDate()}
                 required
               />
             </div>

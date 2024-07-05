@@ -73,7 +73,7 @@ export default function Profile({userData,setUserData }) {
             id="floatingInput"
             value={email}
             onChange={handleEmailChange}
-            disabled={!edit}
+            disabled
           />
           <label htmlFor="floatingInput">Email address</label>
         </div>

@@ -28,6 +28,10 @@ export default function Login({ setIsLoggedIn, setUserData }) {
 
       if (response.status === 200) {
         console.log('Login successful, navigating to home');
+        if(data.userData.email==="admin@gmail.com"){
+          navigate("/admin");
+          return;
+        }
         setUserData(data.userData);
         localStorage.setItem('token', data.token);
         setIsLoggedIn(true);
@@ -40,7 +44,7 @@ export default function Login({ setIsLoggedIn, setUserData }) {
       setMessage('Something went wrong. Please try again.');
     }
   };
-
+  
   return (
     <div className="background-container">
       <main className="form-container">

@@ -7,6 +7,7 @@ const CollectionSchema = mongoose.Schema({
     collectionDate: String,
     address: String,
     notes: String,
+    count: { type: Number, default: 1 }
 })
 
 const CollectionModel = mongoose.model("Collection", CollectionSchema)

@@ -7,7 +7,7 @@ export default function Signup({setIsLoggedIn,setUserData}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [address, setAddress] = useState('');
-  const [phone, setPhone] = useState('');
+  // const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -40,10 +40,24 @@ export default function Signup({setIsLoggedIn,setUserData}) {
       setMessage('Something went wrong. Please try again.');
     }
   };
+  /*phone number validation */
+
+  const [phone, setPhone] = useState("");
+  const [isValid, setIsValid] = useState(true);
+
+  const handlePhoneChange = (e) => {
+    const newPhone = e.target.value;
+    setPhone(newPhone);
+    // Check if the phone number matches the pattern
+    const phoneRegex = /^[0-9]{10}$/;
+    setIsValid(phoneRegex.test(newPhone));
+  };
+
+
 
   return (
     <div className="background-container">
-      <main className="form-container">
+      <main className="form-container" >
         <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Username:</label>
@@ -91,10 +105,11 @@ export default function Signup({setIsLoggedIn,setUserData}) {
             id="phone"
             name="phone"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={handlePhoneChange}
           />
+      {!isValid && <p style={{ color: "red" }}>Please enter a valid 10-digit phone number.</p>}
           
-          <button type="submit" className="btn">Sign Up</button>
+          <button type="submit" className="btn" disabled={isValid?false:true}>Sign Up</button>
         </form>
         <p>{message}</p>
         <p>Already have an account? <Link to="/login">Log in here</Link>.</p>

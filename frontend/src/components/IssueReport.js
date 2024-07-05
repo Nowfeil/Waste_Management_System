@@ -168,8 +168,8 @@ const IssueReport = ({ isLoggedIn,userData,complaint,lodgeComplaint }) => {
           >
             <option value="">Select an issue type</option>
             <option value="Missed Pickup">Missed Pickup</option>
-            <option value="Overflowing Bin">Overflowing Bin</option>
-            <option value="Damaged Bin">Damaged Bin</option>
+            <option value="Bad response">Bad response</option>
+            <option value=" Partially Collected"> Partially Collected</option>
             <option value="Other">Other</option>
           </select>
         </div>

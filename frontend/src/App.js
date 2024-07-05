@@ -18,6 +18,7 @@ import AllUsers from './components/AllUsers';
 import AllWastes from './components/AllWastes';
 import AllIssues from './components/AllIssues'
 import Contactus from './components/Contactus';
+import ProgressBars from './components/ProgressBar';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData,setUserData] = useState('')
@@ -133,6 +134,11 @@ function App() {
             <Navbar isLoggedIn={isLoggedIn} userData={userData}/>
               <Contactus/>
               <Footer />
+            </>
+        }/>
+        <Route path="/progress" element={
+            <>
+            <ProgressBars/>
             </>
         }/>
         </Routes>
